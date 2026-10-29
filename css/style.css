@@ -550,8 +550,8 @@ html:has(dialog[open]) .cam { opacity: 0; }
 /* ---------- real-image covers ---------- */
 .th-img { position: absolute; inset: 0; background: #fff; display: grid; place-items: center; }
 .th-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.th-img.contain { padding: 14px; background: #fff; }
-.th-img.contain img { object-fit: contain; object-position: center; }
+.th-img.fit-contain { padding: 14px; background: #fff; }
+.th-img.fit-contain img { object-fit: contain; object-position: center; }
 .feat-thumb .th-img { position: absolute; }
 
 /* ---------- project write-up (Notion format) ---------- */

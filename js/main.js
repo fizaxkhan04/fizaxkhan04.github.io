@@ -132,7 +132,7 @@
     },
     // a real image of the work: poster, dashboard, map. fit "top" crops from the top, "contain" shows it whole
     image(t) {
-      return `<div class="th-img ${t.fit || "top"}"><img src="assets/photos/sm/${t.file}.jpg" alt="" loading="lazy" onerror="${smFallback}"></div>`;
+      return `<div class="th-img fit-${t.fit || "top"}"><img src="assets/photos/sm/${t.file}.jpg" alt="" loading="lazy" onerror="${smFallback}"></div>`;
     },
     // household income share by bracket, Tracy vs California (ACS 2024 5-year, table S1901)
     income(t) {
@@ -579,6 +579,10 @@
   /* ---------------- hero reel: timecode + pause ---------------- */
   const reel = $("#reel"), tc = $("#tc"), reelBtn = $("#reelToggle");
   if (reel) {
+    // full-HD reel on bigger screens, a lighter vertical cut on phones held upright
+    const phone = matchMedia("(max-width: 860px) and (orientation: portrait)").matches;
+    reel.src = phone ? reel.dataset.phone : reel.dataset.hd;
+    if (!reduce) reel.play().catch(() => {});
     const fmt = (t) => { const f = Math.floor((t % 1) * 24), s = Math.floor(t); return [Math.floor(s / 3600), Math.floor(s / 60) % 60, s % 60, f].map(pad).join(":"); };
     (function tcLoop() { tc.textContent = fmt(reel.currentTime || 0); requestAnimationFrame(tcLoop); })();
     const setReel = (play) => {
