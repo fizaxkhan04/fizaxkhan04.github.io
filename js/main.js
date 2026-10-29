@@ -514,6 +514,9 @@
     const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
     top.classList.toggle("scrolled", y > 10);
+    // menu is see-through while it sits over the hero video
+    const scr = $(".screen");
+    top.classList.toggle("on-video", !!scr && scr.getBoundingClientRect().bottom > top.offsetHeight);
     if (!reduce) {
       const r = expStage.getBoundingClientRect();
       const p = (innerHeight - r.top) / (innerHeight + r.height);
