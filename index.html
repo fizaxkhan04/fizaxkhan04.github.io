@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261029b">
   <link rel="preload" as="image" href="assets/photos/hero-poster.jpg">
   <script>
     /* Safety net: if an edit breaks something, show what and where instead of a blank page. */
@@ -38,7 +38,7 @@
       document.body ? show() : document.addEventListener("DOMContentLoaded", show);
     };
     window.addEventListener("error", function (e) {
-      var file = (e.filename || "").split("/").pop() || "the page";
+      var file = (e.filename || "").split("?")[0].split("/").pop() || "the page";
       window.siteProblem(file + (e.lineno ? ", line " + e.lineno : ""), String(e.message).replace(/^Uncaught /, ""));
     });
   </script>
@@ -229,7 +229,7 @@
   <div class="cam mono" aria-hidden="true"><span class="cam-c tl"></span><span class="cam-c tr"></span><span class="cam-c bl"></span><span class="cam-c br"></span><span class="cam-dot"></span><span class="cam-label">View</span></div>
   <div class="flash" aria-hidden="true"></div>
 
-  <script src="js/content.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/content.js?v=20261029b"></script>
+  <script src="js/main.js?v=20261029b"></script>
 </body>
 </html>

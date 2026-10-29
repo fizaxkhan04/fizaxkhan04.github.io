@@ -16,6 +16,9 @@ All the words on the site live in one file: `js/content.js`.
 2. Click the **pencil icon** (Edit this file).
 3. Change the text between the "quotes". Use the search box (Ctrl+F) to find what you want.
 4. Click **Commit changes**. The live site updates in about a minute.
+   Browsers can keep an old copy of `content.js` for up to 10 minutes. To see your change right away,
+   press **Ctrl+Shift+R** on the site. To make every visitor get it at once, also open `index.html` and
+   change the `?v=` number at the end of `js/content.js?v=...` (any new number works).
 
 What you'll find there, from the top:
 - **Hero:** `tagline` (under your name), `intro` (the sentence below the video, with other options listed), `status` (graduating line).
