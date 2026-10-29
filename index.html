@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiza Khan — Data & Marketing Portfolio</title>
+  <meta name="description" content="Fiza Khan: data analyst and marketer. Statistics at UC Davis, graduating Spring 2027. Data projects, marketing work, video and photography.">
+  <meta property="og:title" content="Fiza Khan — Portfolio">
+  <meta property="og:description" content="Data analyst & marketer. Numbers, video and photography.">
+  <meta property="og:image" content="assets/photos/dsc04115.jpg">
+  <meta name="theme-color" content="#FAF8F3">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%233F6B4E'/><text x='16' y='23' font-family='Georgia' font-style='italic' font-size='20' fill='%23FAF8F3' text-anchor='middle'>f</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="assets/photos/hero-poster.jpg">
+  <script>
+    /* Safety net: if an edit breaks something, show what and where instead of a blank page. */
+    window.siteProblem = function (title, detail) {
+      var show = function () {
+        var box = document.getElementById("site-problem");
+        if (!box) {
+          box = document.createElement("div");
+          box.id = "site-problem";
+          box.setAttribute("role", "alert");
+          box.style.cssText = "position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483647;max-width:640px;margin:0 auto;" +
+            "background:#fff;color:#1E2B24;border:2px solid #E3A3B1;border-radius:10px;padding:16px 18px;" +
+            "font:14px/1.5 system-ui,sans-serif;box-shadow:0 20px 50px -20px rgba(0,0,0,.35)";
+          box.innerHTML = '<strong style="font-size:15px">Something in js/content.js needs fixing</strong><ul id="site-problem-list" style="margin:8px 0;padding-left:18px"></ul>' +
+            '<div style="color:#69756D">Most often it's a missing comma, quote mark or <code>},</code> (check that line and the one just above), or an id that doesn't match a project. On GitHub, open the file\'s History to see your last change, or undo it.</div>';
+          document.body.appendChild(box);
+        }
+        var li = document.createElement("li");
+        li.innerHTML = "<b>" + title + "</b>" + (detail ? " — " + detail : "");
+        document.getElementById("site-problem-list").appendChild(li);
+      };
+      document.body ? show() : document.addEventListener("DOMContentLoaded", show);
+    };
+    window.addEventListener("error", function (e) {
+      var file = (e.filename || "").split("/").pop() || "the page";
+      window.siteProblem(file + (e.lineno ? ", line " + e.lineno : ""), String(e.message).replace(/^Uncaught /, ""));
+    });
+  </script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="mono brand" href="#top">Fiza Khan <span class="muted">(Portfolio)</span></a>
+    <nav class="mono nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="mono btn-ink" id="resumeTop" href="#" download>Résumé ↓</a>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <!-- the camera screen: reel from my SEKAIA film behind a viewfinder -->
+      <div class="screen">
+        <video class="reel" id="reel" autoplay muted loop playsinline preload="auto"
+               poster="assets/photos/hero-poster.jpg" src="assets/video/hero-reel.mp4"
+               aria-label="Clips from my first-place SEKAIA film: Tokyo at night, Mt. Fuji, lanterns, friends"></video>
+        <div class="scrim" aria-hidden="true"></div>
+
+        <div class="hud mono" aria-hidden="true">
+          <span class="hud-tl"><span class="rec"><i></i>Rec</span><span id="tc">00:00:00:00</span></span>
+          <span class="hud-tr">ISO 400 · f/2.8 · 1/125 <span class="batt"><i></i></span></span>
+          <span class="hud-bl">Davis, CA — Tokyo · <span id="clock">—</span></span>
+        </div>
+        <button class="hud-btn mono" id="reelToggle" aria-pressed="false">❚❚ Pause</button>
+
+        <div class="vf-wrap">
+          <div class="vf">
+            <span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span>
+            <span class="vf-x" aria-hidden="true"></span>
+            <h1 class="hero-name">
+              <span class="line"><span class="word">Fiza</span></span>
+              <span class="line"><span class="word ital">Khan</span></span>
+            </h1>
+          </div>
+          <p class="tagline" id="tagline"></p>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="status mono"><span class="dot"></span><span id="status"></span></p>
+          <p class="lede" id="intro"></p>
+          <p class="mono muted" id="school"></p>
+          <div class="quick" id="quick"></div>
+        </div>
+
+        <section class="featured" aria-label="Featured work">
+          <div class="feat-head mono">
+            <span>Featured work</span>
+            <span class="feat-dots" id="featDots" role="tablist"></span>
+          </div>
+          <div class="feat-stack" id="featStack"></div>
+          <a class="feat-all mono" href="#work">See all projects →</a>
+        </section>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work" class="section">
+      <div class="sec-head">
+        <span class="mono">(02)</span>
+        <h2 class="serif">Selected work</h2>
+        <span class="mono muted" id="count"></span>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters mono" role="tablist" aria-label="Filter projects">
+          <button class="chip is-on" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="data" role="tab" aria-selected="false">Data</button>
+          <button class="chip" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
+          <button class="chip" data-filter="video" role="tab" aria-selected="false">Video</button>
+        </div>
+        <div class="views mono" aria-label="Layout">
+          <button class="view is-on" data-view="grid" aria-pressed="true">Look book</button>
+          <span class="muted">/</span>
+          <button class="view" data-view="list" aria-pressed="false">Index</button>
+        </div>
+      </div>
+
+      <div class="projects" id="projects" data-view="grid"></div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section exp">
+      <div class="sec-head">
+        <span class="mono">(03)</span>
+        <h2 class="serif">Experience</h2>
+        <span class="mono muted">Schedule, newest first</span>
+      </div>
+      <div class="exp-stage">
+        <div class="exp-photo" id="expPhoto" aria-hidden="true"></div>
+        <ol class="schedule" id="schedule"></ol>
+      </div>
+    </section>
+
+    <!-- ============ ARCHIVE ============ -->
+    <section id="archive" class="section archive">
+      <div class="sec-head">
+        <span class="mono">(04)</span>
+        <h2 class="serif">Archive <span class="ital">— through my lens</span></h2>
+        <span class="mono muted">Drag or scroll →</span>
+      </div>
+      <div class="strip" id="strip" tabindex="0" aria-label="Photo film strip"></div>
+      <div class="strip-foot mono">
+        <span id="frameNo">01A</span>
+        <span class="muted">Mostly Japan · every frame here is mine</span>
+        <span><button class="arrow" id="prev" aria-label="Previous">←</button> <button class="arrow" id="next" aria-label="Next">→</button></span>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section about">
+      <div class="sec-head">
+        <span class="mono">(05)</span>
+        <h2 class="serif">About me<span class="ast">✱</span></h2>
+        <span class="mono muted">Profile</span>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h3 class="label mono">Profile</h3>
+          <p class="about-text">
+            I'm a Statistics: Statistical Data Science student at UC Davis, and I'm happiest where data and image meet.
+            I've classified farmers' voice notes in Tokyo, mapped a campus to the UN's 17 goals, automated a marketing team's content pipeline,
+            and won a video competition along the way. I'm looking for roles in <em>data analysis, marketing, or both</em>,
+            especially in creative industries like fashion and architecture.
+          </p>
+          <h3 class="label mono">Education</h3>
+          <dl class="rows" id="education"></dl>
+          <h3 class="label mono">Honors</h3>
+          <ul class="honors" id="honors"></ul>
+        </div>
+        <div>
+          <h3 class="label mono">Toolkit</h3>
+          <div class="skills" id="skills"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot" id="contact">
+    <p class="mono muted">(06) Contact</p>
+    <a class="big-mail serif" id="mail" href="#">Let's talk<span class="ital">.</span></a>
+    <div class="foot-row mono">
+      <span id="mailText"></span>
+      <span id="footLinks"></span>
+      <span class="muted">© <span id="yr"></span> Fiza Khan</span>
+    </div>
+    <div class="thanks serif" aria-hidden="true">Thank<span class="ast">✱</span>you</div>
+  </footer>
+
+  <!-- project drawer -->
+  <dialog class="drawer" id="drawer" aria-labelledby="dTitle">
+    <div class="drawer-inner">
+      <div class="drawer-bar mono">
+        <span id="dNo"></span>
+        <span class="drawer-nav">
+          <button id="dPrev" aria-label="Previous project">← Prev</button>
+          <button id="dNext" aria-label="Next project">Next →</button>
+          <button id="dClose" aria-label="Close">Close ✕</button>
+        </span>
+      </div>
+      <div id="dBody"></div>
+    </div>
+  </dialog>
+
+  <!-- photo lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lb-close mono" id="lbClose">Close ✕</button>
+    <img id="lbImg" alt="">
+    <video id="lbVid" muted loop playsinline controls hidden></video>
+    <p class="mono lb-cap" id="lbCap"></p>
+  </dialog>
+
+  <div class="cam mono" aria-hidden="true"><span class="cam-c tl"></span><span class="cam-c tr"></span><span class="cam-c bl"></span><span class="cam-c br"></span><span class="cam-dot"></span><span class="cam-label">View</span></div>
+  <div class="flash" aria-hidden="true"></div>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
